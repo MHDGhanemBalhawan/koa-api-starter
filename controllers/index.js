@@ -1,4 +1,4 @@
-const CompanyController = require(".Company.controller");
+const CompanyController = require("./company.controller");
 
 module.exports = {
   CompanyController
