@@ -2,6 +2,8 @@ const Koa = require("koa");
 const Router = require("koa-router");
 const bodyParser = require("koa-parser");
 
+const router = require("./routes");
+
 const app = new Koa();
 const PORT = 4000;
 
@@ -10,5 +12,9 @@ db.sequelize
   .sync()
   .then(() => console.log("model synced"))
   .catch(err => console.log(err));
+
+app.use(bodyParser());
+app.use(router.routes());
+
 app.listen(PORT);
 console.log("Server is listening to port " + PORT);
