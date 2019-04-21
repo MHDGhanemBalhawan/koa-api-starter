@@ -12,7 +12,9 @@ module.exports = {
   },
   async find(ctx) {
     try {
-      ctx.body = await ctx.db.Company.findAll({});
+      ctx.body = await ctx.db.Company.findAll({
+        include: [{ model: ctx.db.Job }]
+      });
     } catch (err) {
       ctx.throw(500, err);
     }
