@@ -1,6 +1,11 @@
 const Router = require("koa-router");
 const router = new Router();
-const { CompanyController, JobController } = require("../controllers");
+const {
+  CompanyController,
+  JobController,
+  ApplicationController,
+  CandidateController
+} = require("../controllers");
 
 router.post("/companies", CompanyController.create);
 router.get("/companies", CompanyController.find);
@@ -11,4 +16,8 @@ router.put("/companies/:id", CompanyController.update);
 //Job route
 router.post("/jobs", JobController.create);
 //router.get("/jobs", JobController.find);
+
+router.post("/candidates", CandidateController.create);
+
+router.post("/applications", ApplicationController.create);
 module.exports = router;
