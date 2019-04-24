@@ -3,8 +3,7 @@ const router = new Router();
 const {
   CompanyController,
   JobController,
-  ApplicationController,
-  CandidateController
+  ApplicationController
 } = require("../controllers");
 
 router.post("/companies", CompanyController.create);
@@ -15,9 +14,7 @@ router.put("/companies/:id", CompanyController.update);
 
 //Job route
 router.post("/jobs", JobController.create);
-//router.get("/jobs", JobController.find);
-
-router.post("/candidates", CandidateController.create);
+router.get("/jobs", JobController.find);
 
 router.post("/applications", ApplicationController.create);
 module.exports = router;

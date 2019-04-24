@@ -10,7 +10,7 @@ const PORT = 4000;
 
 const db = require("./models");
 db.sequelize
-  .sync({ force: true })
+  .sync({})
   .then(() => console.log("model synced"))
   .catch(err => console.log(err));
 
