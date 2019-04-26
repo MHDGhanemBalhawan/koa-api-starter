@@ -3,7 +3,8 @@ const router = new Router();
 const {
   CompanyController,
   JobController,
-  ApplicationController
+  ApplicationController,
+  UserController
 } = require("../controllers");
 
 router.post("/companies", CompanyController.create);
@@ -16,5 +17,10 @@ router.put("/companies/:id", CompanyController.update);
 router.post("/jobs", JobController.create);
 router.get("/jobs", JobController.find);
 
+//Application route
 router.post("/applications", ApplicationController.create);
+
+//User route
+router.post("/signup", UserController.signup);
+
 module.exports = router;
