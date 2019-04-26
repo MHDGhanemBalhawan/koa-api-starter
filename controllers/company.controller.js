@@ -4,7 +4,8 @@ module.exports = {
       ctx.body = await ctx.db.Company.create({
         name: ctx.request.body.name,
         city: ctx.request.body.city,
-        address: ctx.request.body.address
+        address: ctx.request.body.address,
+        email: ctx.request.body.email
       });
     } catch (err) {
       ctx.throw(500, err);
