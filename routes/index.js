@@ -22,5 +22,5 @@ router.post("/applications", ApplicationController.create);
 
 //User route
 router.post("/signup", UserController.signup);
-
+router.post("/login", UserController.login);
 module.exports = router;

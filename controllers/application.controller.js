@@ -16,6 +16,7 @@ module.exports = {
         address: ctx.request.body.address,
         email: ctx.request.body.email
       });
+
       ctx.body = await ctx.db.Application.create({
         JobId: ctx.request.body.jobId,
         CandidateId: candidate.id

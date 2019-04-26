@@ -7,10 +7,11 @@ module.exports = {
       if (!ctx.request.body.CompanyId) {
         ctx.throw(400, "please provide company id");
       }
-      ctx.body = await ctx.db.Job.create({
+      await ctx.db.Job.create({
         title: ctx.request.body.title,
         CompanyId: ctx.request.body.CompanyId
       });
+      ctx.body = "Job created successfully";
     } catch (err) {
       ctx.throw(500, err);
     }
