@@ -1,0 +1,524 @@
+[
+  {
+    "type": "post",
+    "url": "/applications",
+    "title": "",
+    "group": "Applications",
+    "name": "CreateApplications",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "firstName",
+            "description": "<p>user must provice first name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "lastName",
+            "description": "<p>user must provide last name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>user can enter an address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "JobId",
+            "description": "<p>user must provide jobId</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>user must provide email address</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Params:",
+          "content": "{\n\"firstName\": \"Jacky\",\n\"lastName\": \"Smith\",\n\"address\": \"sdfasdf\",\n\"jobId\": 1,\n\"email\": \"jacky.smith@gmail.com\"\n}",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Application",
+            "description": "<p>Anewly created Application object</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/applications",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>Logged in user can create new applications and apply for jobs</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JWT Authorization Header</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Authorization Header",
+          "content": "{\n \"Authorization\" : \"HLGJLKIT4LJDF99JDFJDFFK\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/application.controller.js",
+    "groupTitle": "Applications"
+  },
+  {
+    "type": "post",
+    "url": "/companies",
+    "title": "",
+    "group": "Companies",
+    "name": "CreateCompanies",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>user must enter company name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "city",
+            "description": "<p>user must provide city</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "address",
+            "description": "<p>user must enter address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "UserId",
+            "description": "<p>user must provide UserId</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Params:",
+          "content": "{\n\"name\": \"MSN\",\n\"city\": \"New York\",\n\"address\": \"1243 John Morris Road\",\n\"email\": \"molly@gmail.com\",\n\"UserId\": 4,\n}",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Msg",
+            "description": "<p>Account created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Signup-Success-Response :",
+          "content": "http/1.1 200ok\n{\nmsg: \"Account created successfully\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/companies",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>User can create new companies</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JWT Authorization Header</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Authorization Header",
+          "content": "{\n \"Authorization\" : \"HLGJLKIT4LJDF99JDFJDFFK\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/company.controller.js",
+    "groupTitle": "Companies"
+  },
+  {
+    "type": "get",
+    "url": "/companies",
+    "title": "",
+    "group": "Companies",
+    "name": "FindCompanies",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Company",
+            "description": "<p>list with companies for the logged user</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "find-Success-Response :",
+          "content": "{\n\"name\": \"MSN\",\n\"city\": \"New York\",\n\"address\": \"1243 John Morris Road\",\n\"email\": \"molly@gmail.com\",\n\"UserId\": 4,\n\"job\" : []\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/companies",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>Logged in user can view all companies</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JWT Authorization Header</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Authorization Header",
+          "content": "{\n \"Authorization\" : \"HLGJLKIT4LJDF99JDFJDFFK\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/company.controller.js",
+    "groupTitle": "Companies"
+  },
+  {
+    "type": "get",
+    "url": "/jobs",
+    "title": "",
+    "group": "Jobs",
+    "name": "Getjobs",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Job",
+            "description": "<p>List of Jobs with candidates</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/jobs",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>User can view all jobs</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JWT Authorization Header</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Authorization Header",
+          "content": "{\n \"Authorization\" : \"HLGJLKIT4LJDF99JDFJDFFK\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/job.controller.js",
+    "groupTitle": "Jobs"
+  },
+  {
+    "type": "post",
+    "url": "/jobs",
+    "title": "",
+    "group": "Jobs",
+    "name": "jobs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "title",
+            "description": "<p>user must enter the job title</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "CompanyId",
+            "description": "<p>user must provide CompanyId</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Params:",
+          "content": "{\n\"title\" : \"Node.js Developer\",\n\"CompanyId\": 1\n}",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Msg",
+            "description": "<p>Job created successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Signup-Success-Response :",
+          "content": "http/1.1 200ok\n{\nmsg: \"Job created successfully\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/jobs",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>User can create new jobs</p>",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JWT Authorization Header</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Authorization Header",
+          "content": "{\n \"Authorization\" : \"HLGJLKIT4LJDF99JDFJDFFK\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "controllers/job.controller.js",
+    "groupTitle": "Jobs"
+  },
+  {
+    "type": "post",
+    "url": "/login",
+    "title": "",
+    "group": "Users",
+    "name": "loginUser",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>user must enter email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>user must enter password</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Params:",
+          "content": "{\n\"email\" : \"test@email.com\",\n\"password\" : \"password123\"\n}",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object",
+            "optional": false,
+            "field": "Token",
+            "description": "<p>A JSON web token to access protected routes</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Login Response:",
+          "content": "{\n\"token\" : \"LKLJLAKJKNA8097087JHLKASNDLKFASD\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/login",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>User can login to the system</p>",
+    "version": "0.0.0",
+    "filename": "controllers/user.controller.js",
+    "groupTitle": "Users"
+  },
+  {
+    "type": "post",
+    "url": "/signup",
+    "title": "",
+    "group": "Users",
+    "name": "signupUser",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>user must enter email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>user must enter password</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request Params:",
+          "content": "{\n\"email\" : \"test@email.com\",\n\"password\" : \"password123\"\n}",
+          "type": "String"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "Msg",
+            "description": "<p>Signup successfully</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Signup-Success-Response :",
+          "content": "http/1.1 200ok\n{\nmsg: \"Signup successfully\"\n}",
+          "type": "JSON"
+        }
+      ]
+    },
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i http://localhost:4000/signup",
+        "type": "curl"
+      }
+    ],
+    "description": "<p>User can create new account</p>",
+    "version": "0.0.0",
+    "filename": "controllers/user.controller.js",
+    "groupTitle": "Users"
+  }
+]

@@ -1,4 +1,37 @@
 module.exports = {
+  /**
+   * @api {post} /companies
+   * @apiGroup Companies
+   * @apiName CreateCompanies
+   * @apiParam {String} [name] user must enter company name
+   * @apiParam {String} [city] user must provide city
+   * @apiParam {String} [address] user must enter address
+   * @apiParam {Number} [UserId] user must provide UserId
+   * @apiParamExample {String} Request Params:
+   * {
+   * "name": "MSN",
+   * "city": "New York",
+   * "address": "1243 John Morris Road",
+   * "email": "molly@gmail.com",
+   * "UserId": 4,
+   * }
+   * @apiSuccess {String} Msg Account created successfully
+   *
+   * @apiSuccessExample  {JSON} Signup-Success-Response :
+   * http/1.1 200ok
+   * {
+   * msg: "Account created successfully"
+   * }
+   * @apiExample {curl} Example usage:
+   * curl -i http://localhost:4000/companies
+   * @apiDescription User can create new companies
+   * @apiHeader {string} Authorization JWT Authorization Header
+   * @apiHeaderExample {JSON} Request Authorization Header
+   * {
+   *  "Authorization" : "HLGJLKIT4LJDF99JDFJDFFK"
+   * }
+   *
+   */
   async create(ctx) {
     try {
       await ctx.db.Company.create({
@@ -13,6 +46,31 @@ module.exports = {
       ctx.throw(500, err);
     }
   },
+  /**
+   * @api {get} /companies
+   * @apiGroup Companies
+   * @apiName FindCompanies
+   * @apiSuccess {Object} Company list with companies for the logged user
+   *
+   * @apiSuccessExample  {JSON} find-Success-Response :
+   * {
+   * "name": "MSN",
+   * "city": "New York",
+   * "address": "1243 John Morris Road",
+   * "email": "molly@gmail.com",
+   * "UserId": 4,
+   * "job" : []
+   * }
+   * @apiExample {curl} Example usage:
+   * curl -i http://localhost:4000/companies
+   * @apiDescription Logged in user can view all companies
+   * @apiHeader {string} Authorization JWT Authorization Header
+   * @apiHeaderExample {JSON} Request Authorization Header
+   * {
+   *  "Authorization" : "HLGJLKIT4LJDF99JDFJDFFK"
+   * }
+   *
+   */
   async find(ctx) {
     try {
       ctx.body = await ctx.db.Company.findAll({
