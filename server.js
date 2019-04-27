@@ -18,7 +18,10 @@ db.sequelize
 app.context.db = db;
 app.use(bodyParser());
 app.use(router.routes());
-app.use(serve(__dirname + "/public"));
+//app.use(serve(__dirname + "/public"));
+if (process.env.NODE_ENV !== "production") {
+  app.use(serve(__dirname + "/public"));
+}
 
-app.listen(PORT);
+app.listen(process.env.PORT || PORT);
 console.log("Server is listening to port " + PORT);
