@@ -5,7 +5,8 @@ module.exports = {
         name: ctx.request.body.name,
         city: ctx.request.body.city,
         address: ctx.request.body.address,
-        email: ctx.request.body.email
+        email: ctx.request.body.email,
+        UserId: ctx.state.user
       });
       ctx.body = "Account created successfully";
     } catch (err) {
@@ -15,7 +16,12 @@ module.exports = {
   async find(ctx) {
     try {
       ctx.body = await ctx.db.Company.findAll({
-        include: [{ model: ctx.db.Job }]
+        where: { UserId: ctx.state.user },
+        include: [
+          {
+            model: ctx.db.Job
+          }
+        ]
       });
     } catch (err) {
       ctx.throw(500, err);
