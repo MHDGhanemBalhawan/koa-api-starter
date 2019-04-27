@@ -10,7 +10,6 @@ module.exports = {
       if (!password) {
         ctx.throw(400, "please provide password");
       }
-
       const encryptedPassword = await UtilService.hashPassword(password);
       await ctx.db.User.create({
         email,
