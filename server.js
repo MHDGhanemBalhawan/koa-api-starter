@@ -22,9 +22,6 @@ app.use(serve(__dirname + "/public"));
 if (process.env.NODE_ENV !== "production") {
   app.use(serve(__dirname + "/public"));
 }
-app.get("/", (request, response) => {
-  response.render(/index);
-});
 
 app.listen(process.env.PORT || PORT);
 console.log("Server is listening to port " + PORT);
