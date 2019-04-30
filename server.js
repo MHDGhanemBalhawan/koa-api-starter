@@ -11,17 +11,20 @@ const PORT = 4000;
 
 const db = require("./models");
 db.sequelize
-  .sync({ force: true })
+  .sync({})
   .then(() => console.log("model synced"))
   .catch(err => console.log(err));
 
 app.context.db = db;
 app.use(bodyParser());
 app.use(router.routes());
-//app.use(serve(__dirname + "/public"));
-if (process.env.NODE_ENV !== "production") {
-  app.use(serve(__dirname + "/public"));
-}
+app.use(serve(__dirname + "/public"));
+// if (process.env.NODE_ENV !== "production") {
+//   app.use(serve(__dirname + "/public"));
+// }
+app.getMaxListeners("/", (request, response) => {
+  response.render(/index);
+});
 
 app.listen(process.env.PORT || PORT);
 console.log("Server is listening to port " + PORT);
