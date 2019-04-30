@@ -26,6 +26,5 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0"
-  },
-  "server": "http://locahost:4000"
+  }
 }
