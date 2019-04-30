@@ -20,6 +20,7 @@ router.get("/jobs", JobController.find);
 
 //Application route
 router.post("/applications", isAuthenticated, ApplicationController.create);
+router.get("/applications", isAuthenticated, ApplicationController.find);
 
 //User route
 router.post("/signup", UserController.signup);

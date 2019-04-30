@@ -52,5 +52,12 @@ module.exports = {
     } catch (err) {
       ctx.throw(500, err);
     }
+  },
+  async find(ctx) {
+    try {
+      ctx.body = await ctx.db.Application.findAll({});
+    } catch (err) {
+      ctx.throw(500, err);
+    }
   }
 };
