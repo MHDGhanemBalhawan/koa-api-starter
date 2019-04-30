@@ -2,15 +2,11 @@
   "name": "koa-api-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "doc": "apidoc -i controllers/ -o public/",
-    "lint": "eslint **/*.js"
+  "main": "server.js",
+  "engine": {
+    "node": "8.15.1",
+    "npm": "6.9.0"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
