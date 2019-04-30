@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   });
-
   Candidate.associate = models => {
     Candidate.belongsToMany(models.Job, {
       through: "Application"
     });
+    Candidate.belongsTo(models.User);
   };
 
   return Candidate;

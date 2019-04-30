@@ -34,7 +34,7 @@ module.exports = {
       if (!ctx.request.body.CompanyId) {
         ctx.throw(400, "please provide company id");
       }
-      await ctx.db.Job.create({
+      ctx.body = await ctx.db.Job.create({
         title: ctx.request.body.title,
         CompanyId: ctx.request.body.CompanyId
       });

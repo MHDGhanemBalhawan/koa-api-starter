@@ -41,7 +41,8 @@ module.exports = {
         firstName: ctx.request.body.firstName,
         lastName: ctx.request.body.lastName,
         address: ctx.request.body.address,
-        email: ctx.request.body.email
+        email: ctx.request.body.email,
+        UserId: ctx.state.user
       });
 
       ctx.body = await ctx.db.Application.create({

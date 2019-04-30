@@ -34,14 +34,13 @@ module.exports = {
    */
   async create(ctx) {
     try {
-      await ctx.db.Company.create({
+      ctx.body = await ctx.db.Company.create({
         name: ctx.request.body.name,
         city: ctx.request.body.city,
         address: ctx.request.body.address,
         email: ctx.request.body.email,
         UserId: ctx.state.user
       });
-      ctx.body = "Account created successfully";
     } catch (err) {
       ctx.throw(500, err);
     }
@@ -74,7 +73,6 @@ module.exports = {
   async find(ctx) {
     try {
       ctx.body = await ctx.db.Company.findAll({
-        where: { UserId: ctx.state.user },
         include: [
           {
             model: ctx.db.Job
