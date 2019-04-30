@@ -19,10 +19,10 @@ app.context.db = db;
 app.use(bodyParser());
 app.use(router.routes());
 app.use(serve(__dirname + "/public"));
-// if (process.env.NODE_ENV !== "production") {
-//   app.use(serve(__dirname + "/public"));
-// }
-app.getMaxListeners("/", (request, response) => {
+if (process.env.NODE_ENV !== "production") {
+  app.use(serve(__dirname + "/public"));
+}
+app.get("/", (request, response) => {
   response.render(/index);
 });
 
