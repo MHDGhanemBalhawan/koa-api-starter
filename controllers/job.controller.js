@@ -1,6 +1,6 @@
 module.exports = {
   /**
-   * @api {post} /jobs
+   * @api {post} jobs
    * @apiGroup Jobs
    * @apiName jobs
    * @apiParam {String} [title] user must enter the job title
@@ -44,7 +44,7 @@ module.exports = {
     }
   },
   /**
-   * @api {get} /jobs
+   * @api {get} jobs
    * @apiGroup Jobs
    * @apiName Getjobs
    * @apiSuccess {Object[]} Job List of Jobs with candidates

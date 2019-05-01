@@ -1,6 +1,6 @@
 module.exports = {
   /**
-   * @api {post} /companies
+   * @api {post} companies
    * @apiGroup Companies
    * @apiName CreateCompanies
    * @apiParam {String} [name] user must enter company name
@@ -46,7 +46,7 @@ module.exports = {
     }
   },
   /**
-   * @api {get} /companies
+   * @api {get} companies
    * @apiGroup Companies
    * @apiName FindCompanies
    * @apiSuccess {Object} Company list with companies for the logged user

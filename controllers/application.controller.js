@@ -1,6 +1,6 @@
 module.exports = {
   /**
-   * @api {post} /applications
+   * @api {post} applications
    * @apiGroup Applications
    * @apiName CreateApplications
    * @apiParam {String} [firstName] user must provice first name
