@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Job Portal API by MHD Ghanem Balhawan",
   "title": "Job Portal",
-  "url": "https://fathomless-falls-28715.herokuapp.com/",
+  "url": "https://fathomless-falls-28715.herokuapp.com",
   "sampleUrl": false,
   "defaultVersion": "0.0.0",
   "apidoc": "0.3.0",
