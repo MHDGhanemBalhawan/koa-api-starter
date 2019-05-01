@@ -2,7 +2,7 @@ const UtilService = require("../services/util.service");
 const JwtService = require("../services/jwt.service");
 module.exports = {
   /**
-   * @api {post} signup
+   * @api {post} signup Signup unique email and password
    * @apiGroup Users
    * @apiName signupUser
    * @apiParam {String} [email] user must enter email
