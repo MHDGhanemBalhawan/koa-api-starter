@@ -117,6 +117,14 @@ API documentation is available on Heroku:
 
 ---
 
+## Install the required packages
+
+- Open your terminal in the root rolder and type
+
+`npm install`
+
+---
+
 # Install MySQL on Mac OS:
 
 **1. Install MySQL with Homebrew**
@@ -180,5 +188,13 @@ API documentation is available on Heroku:
 API documentation is available on Heroku:
 
 [Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
+
+---
+
+## Install the required packages
+
+- Open your terminal in the root rolder and type
+
+`npm install`
 
 ---
