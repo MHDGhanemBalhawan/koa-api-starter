@@ -4,7 +4,7 @@
 
 **1. Download or clone the repository**
 
-## Install MySQL on Ubuntu:
+# Install MySQL on Ubuntu:
 
 **2. To install MySQL, run the following command from a terminal prompt:**
 
@@ -79,23 +79,22 @@ MySQL stores the user information in its own database. The name of the database 
 
 **10. Open your terminal inside koa-api-starter folder and run**
 
-    `npm install`
+`npm install`
 
     npm will install all the required packages.
 
 **11. After finishing installing all packages, run**
 
-    `npm run dev`
+`npm run dev`
 
 **12. Troubleshooting**
 
-    - Changing the database name, user, password for the project.
+- Changing the database name, user, password for the project.
 
-    - Open config folder
-    - Open config.json file and change the values of username, password, database as required
+- Open config folder
+- Open config.json file and change the values of username, password, database as required
 
-    ```
-    "development": {
+```"development": {
         "username": "root",
         "password": "root",
         "database": "koa_api_db",
@@ -103,15 +102,15 @@ MySQL stores the user information in its own database. The name of the database 
         "dialect": "mysql",
         "secret": "SUPER_SECRET-PASSWORD!123?"
     }
-    ```
+```
 
-    - Save and close the file.
+-Save and close the file.
 
-# API Documentation:
+##API Documentation:
 
-    [Heroku](https://fathomless-falls-28715.herokuapp.com/)
+![Heroku]https://fathomless-falls-28715.herokuapp.com/)
 
-## Install MySQL on Mac OS:
+#Install MySQL on Mac OS:
 
 **1. Install MySQL with Homebrew**
 
@@ -147,6 +146,6 @@ MySQL stores the user information in its own database. The name of the database 
 
     Now your MySQL server is ready.
 
-# API Documentation:
+## API Documentation:
 
-    [Heroku](https://fathomless-falls-28715.herokuapp.com/)
+![Heroku](https://fathomless-falls-28715.herokuapp.com/)
