@@ -91,10 +91,11 @@ MySQL stores the user information in its own database. The name of the database 
 
 - Changing the database name, user, password for the project.
 
-- Open config folder
+- Open config folder in the root folder
 - Open config.json file and change the values of username, password, database as required
 
-```"development": {
+```
+"development": {
         "username": "root",
         "password": "root",
         "database": "koa_api_db",
@@ -104,13 +105,17 @@ MySQL stores the user information in its own database. The name of the database 
     }
 ```
 
--Save and close the file.
+- Save and close the file.
 
-##API Documentation:
+---
 
-![Heroku]https://fathomless-falls-28715.herokuapp.com/)
+## API Documentation:
 
-#Install MySQL on Mac OS:
+API documentation is available on Heroku:
+
+[Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
+
+# Install MySQL on Mac OS:
 
 **1. Install MySQL with Homebrew**
 
@@ -146,6 +151,30 @@ MySQL stores the user information in its own database. The name of the database 
 
     Now your MySQL server is ready.
 
+**12. Troubleshooting**
+
+- Changing the database name, user, password for the project.
+
+- Open config folder in the root folder
+- Open config.json file and change the values of username, password, database as required
+
+```
+"development": {
+        "username": "root",
+        "password": "root",
+        "database": "koa_api_db",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "secret": "SUPER_SECRET-PASSWORD!123?"
+    }
+```
+
+- Save and close the file.
+
+---
+
 ## API Documentation:
 
-![Heroku](https://fathomless-falls-28715.herokuapp.com/)
+API documentation is available on Heroku:
+
+[Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
