@@ -2,16 +2,16 @@
 
 # Backend Setup
 
-1. Download or clone the repository
+**1. Download or clone the repository**
 
 ## Install MySQL on Ubuntu:
 
-###2. To install MySQL, run the following command from a terminal prompt:
+**2. To install MySQL, run the following command from a terminal prompt:**
 
 `sudo apt-get update`
 `sudo apt-get install mysql-server`
 
-###3. Once the installation is complete, the MySQL server should be started automatically. You can run the following command from a terminal prompt to check whether the MySQL server is running:
+**3. Once the installation is complete, the MySQL server should be started automatically. You can run the following command from a terminal prompt to check whether the MySQL server is running:**
 
 `sudo netstat -tap | grep mysql`
 
@@ -27,7 +27,7 @@ If the server is not running correctly, you can type the following command to st
 sudo systemctl restart mysql.service
 ```
 
-###4. Allow remote access
+**4. Allow remote access**
 
 If you have iptables enabled and want to connect to the MySQL database from another machine, you must open a port in your server’s firewall (the default port is 3306). You don’t need to do this if the application that uses MySQL is running on the same server.
 
@@ -35,7 +35,7 @@ Run the following command to allow remote access to the mysql server:
 
 `sudo ufw allow mysql`
 
-###5. Start the mysql shell
+**5. Start the mysql shell**
 
 There is more than one way to work with a MySQL server, but this article focuses on the most basic and compatible approach, the mysql shell.
 
@@ -43,7 +43,7 @@ At the command prompt, run the following command to launch the mysql shell and e
 
 `/usr/bin/mysql -u root -p`
 
-###6. When you’re prompted for a password, enter the one that you set at installation time, or if you haven’t set one, press Enter to submit no password.
+**6. When you’re prompted for a password, enter the one that you set at installation time, or if you haven’t set one, press Enter to submit no password.**
 
 The following mysql shell prompt should appear:
 
@@ -51,7 +51,7 @@ The following mysql shell prompt should appear:
 mysql>
 ```
 
-###7. Set the root password
+**7. Set the root password**
 
 If you logged in by entering a blank password, or if you want to change the root password that you set, you can create or change the password.
 
@@ -67,27 +67,27 @@ If you logged in by entering a blank password, or if you want to change the root
 
 `FLUSH PRIVILEGES;`
 
-###8. View users
+**8. View users**
 
 MySQL stores the user information in its own database. The name of the database is mysql. Inside that database the user information is in a table, a dataset, named user. If you want to see what users are set up in the MySQL user table, run the following command:
 
 `SELECT User, Host, authentication_string FROM mysql.user;`
 
-###9. Create a database
+**9. Create a database**
 
 `CREATE DATABASE koa_api_db;`
 
-###10. Open your terminal inside koa-api-starter folder and run
+**10. Open your terminal inside koa-api-starter folder and run**
 
     `npm install`
 
     npm will install all the required packages.
 
-###11. After finishing installing all packages, run
+**11. After finishing installing all packages, run**
 
     `npm run dev`
 
-###12. Troubleshooting
+**12. Troubleshooting**
 
     - Changing the database name, user, password for the project.
 
@@ -107,44 +107,46 @@ MySQL stores the user information in its own database. The name of the database 
 
     - Save and close the file.
 
+# API Documentation:
+
+    [Heroku](https://fathomless-falls-28715.herokuapp.com/)
+
 ## Install MySQL on Mac OS:
 
-###1. Install MySQL with Homebrew
+**1. Install MySQL with Homebrew**
 
-Using Homebrew service to download
+    Using Homebrew service to download
 
-Homebrew is a package manager for Mac which greatly simplifies the process of installing command line software and tools on a Mac. It’s one of the most common ways to install an app on Mac.
+    Homebrew is a package manager for Mac which greatly simplifies the process of installing command line software and tools on a Mac. It’s one of the most common ways to install an app on Mac.
 
 ##To install Homebrew, open Terminal and run:
 
-    ```
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ```
+`$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
     Note: Homebrew will download and install Command Line Tools for Xcode as part of the installation process. This might take a lot of time since those apps are not lightweight.
 
     Then install MySQL using Homebrew:
 
-    ```
-    \$ brew install mysql
-    ```
+`\$ brew install mysql`
 
     Install brew services:
 
-    ```
-    \$ brew tap homebrew/services
-    ```
+`\$ brew tap homebrew/services`
 
     Load and start the MySQL service:
 
-    ```
-    \$ brew services start mysql
-    ```
+`\$ brew services start mysql`
 
-    Expected output: Successfully started mysql (label: homebrew.mxcl.mysql)
+    Expected output:
+
+`Successfully started mysql (label: homebrew.mxcl.mysql`
 
     Open Terminal and execute the following command to set the root password:
 
-    `mysqladmin -u root password 'yourpassword'`
+`mysqladmin -u root password 'yourpassword'`
 
     Now your MySQL server is ready.
+
+# API Documentation:
+
+    [Heroku](https://fathomless-falls-28715.herokuapp.com/)
