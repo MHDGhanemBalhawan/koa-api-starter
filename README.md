@@ -115,50 +115,55 @@ API documentation is available on Heroku:
 
 [Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
 
-
----
-
 # Install MySQL on Mac OS:
 
 **1. Install MySQL with Homebrew**
 
-    Using Homebrew service to download
+Using Homebrew service to download
 
-    Homebrew is a package manager for Mac which greatly simplifies the process of installing command line software and tools on a Mac. It’s one of the most common ways to install an app on Mac.
+Homebrew is a package manager for Mac which greatly simplifies the process of installing command line software and tools on a Mac. It’s one of the most common ways to install an app on Mac.
 
-##To install Homebrew, open Terminal and run:
+**2. To install Homebrew, open Terminal and run:**
 
 `$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
     Note: Homebrew will download and install Command Line Tools for Xcode as part of the installation process. This might take a lot of time since those apps are not lightweight.
 
-    Then install MySQL using Homebrew:
+**3. Then install MySQL using Homebrew:**
 
-`\$ brew install mysql`
+```
+\$ brew install mysql
+```
 
-    Install brew services:
+**4. Install brew services:**
 
-`\$ brew tap homebrew/services`
+```
+\$ brew tap homebrew/services
+```
 
-    Load and start the MySQL service:
+**5. Load and start the MySQL service:**
 
-`\$ brew services start mysql`
+```
+\$ brew services start mysql
+```
 
-    Expected output:
+Expected output:
 
-`Successfully started mysql (label: homebrew.mxcl.mysql`
+```
+Successfully started mysql (label: homebrew.mxcl.mysql
+```
 
-    Open Terminal and execute the following command to set the root password:
+**5. Open Terminal and execute the following command to set the root password:**
 
 `mysqladmin -u root password 'yourpassword'`
 
-    Now your MySQL server is ready.
-
-**12. Troubleshooting**
+Now your MySQL server is ready.
+  
+**6. Troubleshooting**
 
 - Changing the database name, user, password for the project.
 
-- Open config folder in the root folder
+- Open config folder in the project root directory
 - Open config.json file and change the values of username, password, database as required
 
 ```
@@ -181,7 +186,3 @@ API documentation is available on Heroku:
 API documentation is available on Heroku:
 
 [Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
-
----
-
-

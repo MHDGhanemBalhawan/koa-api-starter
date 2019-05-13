@@ -3,10 +3,11 @@ const Router = require("koa-router");
 const bodyParser = require("koa-parser");
 const _ = require("lodash");
 const serve = require("koa-static");
-
+const cors = require("@koa/cors");
 const router = require("./routes");
 
 const app = new Koa();
+app.use(cors());
 const PORT = 4000;
 
 const db = require("./models");
