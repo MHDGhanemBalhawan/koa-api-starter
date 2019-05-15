@@ -113,7 +113,7 @@ MySQL stores the user information in its own database. The name of the database 
 
 API documentation is available on Heroku:
 
-[Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
+[Heroku repo link](https://fathomless-falls-28715.herokuapp.com/ "Heroku repo")
 
 # Install MySQL on Mac OS:
 
@@ -158,7 +158,7 @@ Successfully started mysql (label: homebrew.mxcl.mysql
 `mysqladmin -u root password 'yourpassword'`
 
 Now your MySQL server is ready.
-  
+
 **6. Troubleshooting**
 
 - Changing the database name, user, password for the project.
@@ -185,4 +185,4 @@ Now your MySQL server is ready.
 
 API documentation is available on Heroku:
 
-[Heroku repo]https://fathomless-falls-28715.herokuapp.com/)
+[Heroku repo link](https://fathomless-falls-28715.herokuapp.com/ "Heroku repo")
