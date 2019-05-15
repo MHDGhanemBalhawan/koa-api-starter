@@ -127,7 +127,7 @@ Homebrew is a package manager for Mac which greatly simplifies the process of in
 
 `$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-    Note: Homebrew will download and install Command Line Tools for Xcode as part of the installation process. This might take a lot of time since those apps are not lightweight.
+Note: Homebrew will download and install Command Line Tools for Xcode as part of the installation process. This might take a lot of time since those apps are not lightweight.
 
 **3. Then install MySQL using Homebrew:**
 
@@ -174,7 +174,7 @@ Now your MySQL server is ready.
         "host": "127.0.0.1",
         "dialect": "mysql",
         "secret": "SUPER_SECRET-PASSWORD!123?"
-    }
+}
 ```
 
 - Save and close the file.
