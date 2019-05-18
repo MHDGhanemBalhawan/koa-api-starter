@@ -85,7 +85,7 @@ MySQL stores the user information in its own database. The name of the database 
 
 **11. After finishing installing all packages, run**
 
-`npm run dev`
+`npm start`
 
 **12. Troubleshooting**
 
