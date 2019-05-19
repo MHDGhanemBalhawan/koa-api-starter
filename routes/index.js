@@ -4,7 +4,8 @@ const {
   CompanyController,
   JobController,
   ApplicationController,
-  UserController
+  UserController,
+  CandidateController
 } = require("../controllers");
 //const isAuthenticated = require("../policies/isAuthenticated");
 
@@ -26,3 +27,7 @@ router.get("/applications", ApplicationController.find);
 router.post("/signup", UserController.signup);
 router.post("/login", UserController.login);
 module.exports = router;
+
+//Candidate route
+router.post("/candidates", CandidateController.create);
+router.get("/candidates", CandidateController.find);

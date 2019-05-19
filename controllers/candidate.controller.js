@@ -1,25 +1,23 @@
 module.exports = {
   /**
-   * @api {post} applications
-   * @apiGroup Applications
-   * @apiName CreateApplications
+   * @api {post} candidate
+   * @apiGroup Candidate
+   * @apiName CreateCandidate
    * @apiParam {String} [firstName] user must provice first name
    * @apiParam {String}[lastName] user must provide last name
    * @apiParam {String} [address] user can enter an address
-   * @apiParam {Number}[JobId] user must provide jobId
    * @apiParam {String}[email] user must provide email address
    * @apiParamExample {String} Request Params:
    * {
    * "firstName": "Jacky",
    * "lastName": "Smith",
    * "address": "sdfasdf",
-   * "jobId": 1,
    * "email": "jacky.smith@gmail.com"
    * }
-   * @apiSuccess {Object} Application a newly created Application object
+   * @apiSuccess {Object} Application A newly created Candidate object
    * @apiExample {curl} Example usage:
-   * curl -i http://localhost:4000/applications
-   * @apiDescription Logged in user can create new applications and apply for jobs
+   * curl -i http://localhost:4000/candidate
+   * @apiDescription Logged in user can create new candidate and apply for jobs
    * @apiHeader {string} Authorization JWT Authorization Header
    * @apiHeaderExample {JSON} Request Authorization Header
    * {
@@ -44,18 +42,14 @@ module.exports = {
         email: ctx.request.body.email,
         UserId: ctx.state.user
       });
-
-      ctx.body = await ctx.db.Application.create({
-        JobId: ctx.request.body.jobId,
-        CandidateId: candidate.id
-      });
+      ctx.body = candidate;
     } catch (err) {
       ctx.throw(500, err);
     }
   },
   async find(ctx) {
     try {
-      ctx.body = await ctx.db.Application.findAll({});
+      ctx.body = await ctx.db.Candidate.findAll({});
     } catch (err) {
       ctx.throw(500, err);
     }
