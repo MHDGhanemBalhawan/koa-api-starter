@@ -98,5 +98,64 @@ module.exports = {
     } catch (err) {
       ctx.throw(500, err);
     }
+  },
+  async find(ctx) {
+    try {
+      ctx.body = await ctx.db.User.findAll({
+        include: [
+          {
+            model: ctx.db.Candidate
+          }
+        ]
+      });
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
+  async findOne(ctx) {
+    try {
+      const candidate = await ctx.db.User.findOne({
+        where: { id: ctx.params.id },
+        include: [
+          {
+            model: ctx.db.Candidate
+          }
+        ]
+      });
+      if (!candidate) {
+        ctx.throw(404, "User id is invalid");
+      }
+      ctx.body = User;
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
+  async destroy(ctx) {
+    try {
+      const results = await ctx.db.User.destroy({
+        where: { id: ctx.params.id }
+      });
+      results === 0
+        ? ctx.throw(500, "invalid Id provided")
+        : (ctx.body = `User with id ${ctx.params.id} is deleted`);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
+  async update(ctx) {
+    try {
+      const results = await ctx.db.User.update(
+        {
+          email: ctx.request.body.email,
+          password: ctx.request.body.password
+        },
+        { where: { id: ctx.params.id } }
+      );
+      results === 0
+        ? ctx.throw(500, "invalid Id provided")
+        : (ctx.body = `User with id ${ctx.params.id} is updated`);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
   }
 };

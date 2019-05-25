@@ -22,6 +22,9 @@ router.get("/jobs", JobController.find);
 //Application route
 router.post("/applications", ApplicationController.create);
 router.get("/applications", ApplicationController.find);
+router.get("/applications/:id", ApplicationController.findOne);
+router.delete("/applications/:id", ApplicationController.destroy);
+router.put("/applications/:id", ApplicationController.update);
 
 //User route
 router.post("/signup", UserController.signup);
@@ -31,3 +34,6 @@ module.exports = router;
 //Candidate route
 router.post("/candidates", CandidateController.create);
 router.get("/candidates", CandidateController.find);
+router.get("/candidates/:id", CandidateController.findOne);
+router.delete("/candidates/:id", CandidateController.destroy);
+router.put("/candidates/:id", CandidateController.update);

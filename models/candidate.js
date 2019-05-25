@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       through: "Application"
     });
     Candidate.belongsTo(models.User);
+    Candidate.hasMany(models.Application);
   };
 
   return Candidate;
