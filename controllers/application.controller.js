@@ -61,7 +61,7 @@ module.exports = {
       ctx.body = await ctx.db.Application.findAll({
         include: [
           {
-            model: ctx.db.Candidate
+            model: ctx.db.Job
           }
         ]
       });

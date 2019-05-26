@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     status_id: DataTypes.INTEGER
   });
   Application.associate = models => {
-    Application.belongsTo(models.User);
     Application.belongsTo(models.Candidate);
+    Application.belongsTo(models.Job);
   };
   return Application;
 };
