@@ -42,6 +42,20 @@ There is more than one way to work with a MySQL server, but this article focuses
 At the command prompt, run the following command to launch the mysql shell and enter it as the root user:
 
 `/usr/bin/mysql -u root -p`
+or
+`sudo mysql -u root -p`
+
+```
+password for (administrator):
+```
+
+Enter your adminsitator pasword
+
+You will be prompt to enter the root password for mysql
+
+```
+Enter password:
+```
 
 **6. When you’re prompted for a password, enter the one that you set at installation time, or if you haven’t set one, press Enter to submit no password.**
 
@@ -49,6 +63,10 @@ The following mysql shell prompt should appear:
 
 ```
 mysql>
+
+Note: on some versions, if password column doesn't exist, you may want to try:
+
+`UPDATE user SET authentication_string=password('root') WHERE user='root';`
 ```
 
 **7. Set the root password**
@@ -66,6 +84,15 @@ If you logged in by entering a blank password, or if you want to change the root
 - To make the change take effect, reload the stored user information with the following command:
 
 `FLUSH PRIVILEGES;`
+
+Or you might need to use these commands:
+
+```
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+mysql> FLUSH PRIVILEGES;
+mysql> quit
+
+```
 
 **8. View users**
 
