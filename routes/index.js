@@ -16,6 +16,7 @@ router.delete("/companies/:id", isAuthenticated, CompanyController.destroy);
 router.put("/companies/:id", isAuthenticated, CompanyController.update);
 
 //Job route
+
 router.post("/jobs", JobController.create);
 router.get("/jobs", JobController.find);
 
